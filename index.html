@@ -1,0 +1,115 @@
+<!-- 
+    FIFA World Cup 2022 draw simulator
+    Copyright (C) 2022  soheil boodaghie
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	contact: soheilboodaghie@gmail.com
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="2022 FIFA World Cup Draw" />
+		<meta
+			name="keywords"
+			content="FIFA World Cup, Qatar World Cup, 2022 World Cup ,Qatar 2022, Qatar, World Cup"
+		/>
+		<meta name="author" content="Soheil Boodaghie" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/favicon/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="/favicon/safari-pinned-tab.svg"
+			color="#5bbad5"
+		/>
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<link rel="stylesheet" href="style/buttons.css" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/responsive.css" />
+		<title>FIFA World Cup 2022 Draw</title>
+	</head>
+	<body class="preload">
+		<div id="main-container">
+			<header id="header">
+				<div id="logo">
+					<div class="cup"></div>
+					<div class="title"></div>
+				</div>
+				<div id="buttons">
+					<div id="theme-btn">
+						<img src="/assets/moon.png" alt="moon" />
+						<img src="/assets/sun.png" alt="sun" />
+						<div class="slider">
+							<img src="/assets/earth.png" alt="earth" />
+						</div>
+					</div>
+
+					<div id="clear-btn">
+						<div class="eraser"></div>
+						<div class="line"></div>
+					</div>
+
+					<div id="dual-btn">
+						<div id="position-btn" class="auto">
+							<div class="ball" id="ball-1"></div>
+							<div class="ball" id="ball-2"></div>
+							<div class="ball" id="ball-3"></div>
+							<div class="ball" id="ball-4"></div>
+							<div class="mark"></div>
+						</div>
+						<div id="playoff-btn" class="waiting">
+							<div id="box-1"></div>
+							<div id="separator">
+								<div id="sep-container"></div>
+							</div>
+							<div id="box-2"></div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main id="tables">
+				<div id="selection">
+					<div id="pots" class="panel"></div>
+					<div id="positions" class="auto panel"></div>
+				</div>
+				<div id="groups" class="panel"></div>
+			</main>
+		</div>
+		<script src="/js/arrays.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,639 @@
+/*
+	FIFA World Cup 2022 draw simulator
+    Copyright (C) 2022  soheil boodaghie
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	contact: soheilboodaghie@gmail.com
+*/
+/*
+	FIFA World Cup 2022 draw simulator
+    Copyright (C) 2022  soheil boodaghie
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	contact: soheilboodaghie@gmail.com
+*/
+#theme-btn {
+  border-radius: 15px;
+  background-color: var(--card-background);
+  -webkit-box-shadow: var(--box-shadow) 0 0 5px;
+          box-shadow: var(--box-shadow) 0 0 5px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease, -webkit-box-shadow var(--duration-2) ease;
+  background-color: var(--sky-color);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 5px;
+}
+
+#theme-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#theme-btn:hover {
+  -webkit-box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+          box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+}
+
+#theme-btn img {
+  -webkit-transition: all var(--duration-3) ease;
+  transition: all var(--duration-3) ease;
+  height: 21px;
+  width: 21px;
+}
+
+#theme-btn .slider {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  left: 5px;
+  -webkit-transform: rotate(-140deg);
+          transform: rotate(-140deg);
+  -webkit-transition: all var(--duration-3) ease-in-out;
+  transition: all var(--duration-3) ease-in-out;
+}
+
+#theme-btn .slider::before, #theme-btn .slider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  -webkit-transition: all var(--duration-1) ease;
+  transition: all var(--duration-1) ease;
+}
+
+#theme-btn .slider img {
+  height: 100%;
+  width: 100%;
+}
+
+#theme-btn.dark .slider {
+  left: calc(100% - 3px);
+  -webkit-transform: translateX(-100%) rotate(0);
+          transform: translateX(-100%) rotate(0);
+}
+
+#theme-btn.dark .slider::before, #theme-btn.dark .slider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -22px;
+  height: 3px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: #eee;
+  -webkit-transition: all var(--duration-2) ease var(--latency-3);
+  transition: all var(--duration-2) ease var(--latency-3);
+  -webkit-animation: shining 3s ease alternate 1.5s forwards;
+          animation: shining 3s ease alternate 1.5s forwards;
+}
+
+#theme-btn.dark .slider::after {
+  top: 10px;
+  left: -18px;
+  height: 2px;
+  width: 3px;
+  -webkit-animation: shining 3s ease alternate forwards;
+          animation: shining 3s ease alternate forwards;
+}
+
+@-webkit-keyframes shining {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shining {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#clear-btn {
+  border-radius: 15px;
+  background-color: var(--card-background);
+  -webkit-box-shadow: var(--box-shadow) 0 0 5px;
+          box-shadow: var(--box-shadow) 0 0 5px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease, -webkit-box-shadow var(--duration-2) ease;
+}
+
+#clear-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#clear-btn:hover {
+  -webkit-box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+          box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+}
+
+#clear-btn .eraser {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  height: 22px;
+  width: 15px;
+  border: 2px solid var(--text-color);
+  border-radius: 2px 2px 5px 5px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  -webkit-transition: border var(--duration-3) ease-in-out var(--latency-2);
+  transition: border var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#clear-btn .eraser::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  height: calc(50% + 2px);
+  width: calc(100% + 4px);
+  background-color: var(--text-color);
+  border-radius: 3px 3px 0 0;
+  -webkit-transition: background var(--duration-3) ease-in-out var(--latency-2);
+  transition: background var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#clear-btn .line {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: var(--text-color);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.8;
+  -webkit-transition: background var(--duration-3) ease-in-out var(--latency-2);
+  transition: background var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#clear-btn.erasing .eraser {
+  -webkit-animation: erase var(--duration-3) ease-in-out;
+          animation: erase var(--duration-3) ease-in-out;
+}
+
+@-webkit-keyframes erase {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+  }
+  16.7% {
+    -webkit-transform: translateX(-100%) rotate(45deg);
+            transform: translateX(-100%) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateX(0) rotate(45deg);
+            transform: translateX(0) rotate(45deg);
+  }
+  83.3% {
+    -webkit-transform: translateX(-100%) rotate(45deg);
+            transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+@keyframes erase {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+  }
+  16.7% {
+    -webkit-transform: translateX(-100%) rotate(45deg);
+            transform: translateX(-100%) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateX(0) rotate(45deg);
+            transform: translateX(0) rotate(45deg);
+  }
+  83.3% {
+    -webkit-transform: translateX(-100%) rotate(45deg);
+            transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+#dual-btn {
+  border-radius: 15px;
+  background-color: var(--card-background);
+  -webkit-box-shadow: var(--box-shadow) 0 0 5px;
+          box-shadow: var(--box-shadow) 0 0 5px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease, -webkit-box-shadow var(--duration-2) ease;
+  overflow: hidden;
+}
+
+#dual-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#dual-btn:hover {
+  -webkit-box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+          box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+}
+
+#dual-btn #position-btn {
+  border-radius: 15px;
+  background-color: var(--card-background);
+  -webkit-box-shadow: var(--box-shadow) 0 0 5px;
+          box-shadow: var(--box-shadow) 0 0 5px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease, -webkit-box-shadow var(--duration-2) ease;
+  position: absolute;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#dual-btn #position-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#dual-btn #position-btn:hover {
+  -webkit-box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+          box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+}
+
+#dual-btn #position-btn .ball {
+  position: absolute;
+  -webkit-transition: all var(--duration-3) ease, background var(--duration-3) ease-in-out var(--latency-2);
+  transition: all var(--duration-3) ease, background var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#dual-btn #position-btn.manual .ball {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+}
+
+#dual-btn #position-btn.manual #ball-1 {
+  top: 6px;
+  left: 27px;
+  background-color: var(--card-background);
+  border: 1px solid var(--text-color);
+}
+
+#dual-btn #position-btn.manual #ball-2 {
+  top: 6px;
+  right: 27px;
+}
+
+#dual-btn #position-btn.manual #ball-3 {
+  bottom: 6px;
+  left: 27px;
+}
+
+#dual-btn #position-btn.manual #ball-4 {
+  bottom: 6px;
+  right: 27px;
+}
+
+#dual-btn #position-btn.auto .ball {
+  border-radius: 10px;
+  background-color: var(--text-color);
+}
+
+#dual-btn #position-btn.auto #ball-1 {
+  top: 16px;
+  left: 30px;
+  width: 8px;
+  height: 2.5px;
+}
+
+#dual-btn #position-btn.auto #ball-2 {
+  top: 16px;
+  right: 34px;
+  width: 8px;
+  height: 2.5px;
+}
+
+#dual-btn #position-btn.auto #ball-3 {
+  left: 30px;
+  bottom: 5px;
+  height: 20px;
+  width: 3px;
+  -webkit-transform: skew(-25deg, 25deg);
+          transform: skew(-25deg, 25deg);
+}
+
+#dual-btn #position-btn.auto #ball-4 {
+  right: 30px;
+  bottom: 5px;
+  height: 15px;
+  width: 3px;
+  -webkit-transform: skew(25deg, -25deg);
+          transform: skew(25deg, -25deg);
+}
+
+#dual-btn #playoff-btn {
+  border-radius: 15px;
+  background-color: var(--card-background);
+  -webkit-box-shadow: var(--box-shadow) 0 0 5px;
+          box-shadow: var(--box-shadow) 0 0 5px;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, -webkit-box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease;
+  transition: all var(--duration-3) ease-in-out, box-shadow var(--duration-2) ease, -webkit-box-shadow var(--duration-2) ease;
+  position: absolute;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+#dual-btn #playoff-btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#dual-btn #playoff-btn:hover {
+  -webkit-box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+          box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+}
+
+#dual-btn #playoff-btn > * {
+  position: absolute;
+}
+
+#dual-btn #playoff-btn * {
+  -webkit-transition: all var(--duration-3) ease, background var(--duration-3) ease-in-out var(--latency-2), border var(--duration-3) ease-in-out var(--latency-2);
+  transition: all var(--duration-3) ease, background var(--duration-3) ease-in-out var(--latency-2), border var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#dual-btn #playoff-btn.waiting > * {
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#dual-btn #playoff-btn.waiting #box-1 {
+  left: 15px;
+  background-color: var(--text-color);
+}
+
+#dual-btn #playoff-btn.waiting #box-2 {
+  left: 43px;
+  background-color: var(--card-background);
+  border: 2px solid var(--text-color);
+}
+
+#dual-btn #playoff-btn.waiting #separator {
+  left: 29px;
+}
+
+#dual-btn #playoff-btn.waiting #separator #sep-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+#dual-btn #playoff-btn.waiting #separator #sep-container::before, #dual-btn #playoff-btn.waiting #separator #sep-container::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0s ease-in-out, background var(--duration-3) ease-in-out var(--latency-2);
+  transition: all 0s ease-in-out, background var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#dual-btn #playoff-btn.waiting #separator #sep-container::before {
+  top: 3px;
+}
+
+#dual-btn #playoff-btn.waiting #separator #sep-container::after {
+  bottom: 3px;
+}
+
+#dual-btn #playoff-btn.revealed #box-1 {
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#dual-btn #playoff-btn.revealed #box-2 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  top: calc(35% - 2px);
+  left: calc(50% - 2px);
+  background-color: var(--card-background);
+  border: 2px solid var(--text-color);
+}
+
+#dual-btn #playoff-btn.revealed #separator {
+  height: 16px;
+  width: 16px;
+  background-color: var(--card-background);
+  border-radius: 50%;
+  top: 35%;
+  left: 50%;
+}
+
+#dual-btn #playoff-btn.revealed #separator #sep-container {
+  position: absolute;
+  top: 8%;
+  left: 15%;
+  width: 60%;
+  height: 60%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  z-index: 2;
+}
+
+#dual-btn #playoff-btn.revealed #separator #sep-container::before, #dual-btn #playoff-btn.revealed #separator #sep-container::after {
+  content: "";
+  position: absolute;
+  background-color: var(--text-color);
+  border-radius: 5px;
+  -webkit-transition: all var(--duration-3) ease-in-out var(--latency-2);
+  transition: all var(--duration-3) ease-in-out var(--latency-2);
+}
+
+#dual-btn #playoff-btn.revealed #separator #sep-container::before {
+  top: 35%;
+  left: 0;
+  width: 3px;
+  height: 65%;
+}
+
+#dual-btn #playoff-btn.revealed #separator #sep-container::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+}
+/*# sourceMappingURL=buttons.css.map */

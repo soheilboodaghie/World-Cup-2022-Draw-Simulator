@@ -1,0 +1,135 @@
+/*
+	FIFA World Cup 2022 draw simulator
+    Copyright (C) 2022  soheil boodaghie
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	contact: soheilboodaghie@gmail.com
+*/
+// ------------------------------------------------------------
+@mixin center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+@mixin card {
+	border-radius: 15px;
+	background-color: var(--card-background);
+	box-shadow: var(--box-shadow) 0 0 5px;
+	padding: 2rem;
+}
+
+@mixin button() {
+	@include card();
+	@include center();
+	position: relative;
+	height: 30px;
+	width: 72px;
+	padding: 0;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: all var(--duration-3) ease-in-out,
+		box-shadow var(--duration-2) ease;
+
+	&:active {
+		transform: scale(0.9);
+	}
+
+	&:hover {
+		box-shadow: var(--box-shadow) 0 0 2px, var(--box-shadow) 0 0 1px inset;
+	}
+}
+
+@mixin createLogo($num) {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: fit-content;
+
+	.cup {
+		background: url("/assets/logo_cup.png");
+		width: $num * 81px;
+		height: $num * 169px;
+		background-size: $num * 81px $num * 169px;
+		margin-right: $num * 1rem;
+	}
+
+	.title {
+		background-image: url("/assets/logo_name.png");
+		width: $num * 267px;
+		height: $num * 70px;
+		background-size: $num * 267px $num * 70px;
+		margin-top: $num * 1rem;
+	}
+}
+
+@mixin potTeam($width, $height) {
+	height: $height + 3px;
+
+	.flag {
+		width: $width;
+		height: $height;
+		background-size: $width $height;
+	}
+
+	.name {
+		width: calc(100% - #{$width} - 4.5px);
+		height: $height;
+	}
+}
+
+@mixin groupTeamHoz($width, $height) {
+	height: $height + 2px;
+
+	.flag {
+		width: $width;
+		height: $height;
+
+		&-section {
+			background-size: $width $height;
+		}
+	}
+
+	.name {
+		width: calc(100% - #{$width} - 3px);
+		height: $height;
+	}
+}
+
+@mixin groupTeamVer($width, $height) {
+	height: 2 * $height + 3px;
+	width: $width + 2px;
+
+	.flag {
+		width: $width;
+		height: $height;
+
+		&-section {
+			background-size: $width $height;
+		}
+	}
+
+	.name {
+		width: $width;
+		height: $height;
+		top: $height + 2px;
+
+		&-section {
+			@include center();
+			width: $width;
+		}
+	}
+}

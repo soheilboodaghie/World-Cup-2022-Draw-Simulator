@@ -1,0 +1,616 @@
+/*
+	FIFA World Cup 2022 draw simulator
+    Copyright (C) 2022  soheil boodaghie
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	contact: soheilboodaghie@gmail.com
+*/
+// ------------------------------------------------------------
+@import "utilities.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+
+	--duration-1: 0.2s;
+	--duration-2: 0.3s;
+	--duration-3: 0.4s;
+	--duration-4: 0.5s;
+	--duration-5: 0.8s;
+
+	--latency-1: 0.1s;
+	--latency-2: 0.2s;
+	--latency-3: 0.3s;
+	--latency-4: 0.4s;
+	--latency-5: 0.5s;
+
+	--main-background: #f7fff7;
+	--card-background: #f4f3ec;
+	--text-color: #333;
+	--box-shadow: #778899;
+	--border-shadow: #bebebe;
+	--highlight-color: #4166f5;
+	--sky-color: #00aae4;
+	--posBtn-color: #fdfd96;
+	--posBtn-text: #333;
+	--posBtn-shadow: #8c92ac;
+
+	header {
+		#logo {
+			.title {
+				filter: invert(0%) sepia(97%) saturate(0%) hue-rotate(29deg)
+					brightness(97%) contrast(103%);
+			}
+		}
+	}
+
+	&.dark {
+		--main-background: #074963;
+		--card-background: #18183b;
+		--text-color: #d8e8f5;
+		--sky-color: #191970;
+		--box-shadow: #617385;
+		--border-shadow: #708090;
+		--highlight-color: #007fff;
+		--posBtn-color: #c5e384;
+		--posBtn-text: #000;
+		--posBtn-shadow: #4f666a;
+
+		header {
+			#logo {
+				.title {
+					filter: invert(95%) sepia(75%) saturate(128%) hue-rotate(206deg)
+						brightness(119%) contrast(88%);
+				}
+			}
+		}
+	}
+
+	color: var(--text-color);
+	user-select: none;
+	background: var(--main-background);
+	font-family: "Nunito", sans-serif;
+	transition: background var(--duration-3) ease-in-out,
+		color var(--duration-3) ease-in-out;
+
+	&.preload {
+		--duration-1: 0;
+		--duration-2: 0;
+		--duration-3: 0;
+		--duration-4: 0;
+		--duration-5: 0;
+		--latency-1: 0;
+		--latency-2: 0;
+		--latency-3: 0;
+		--latency-4: 0;
+		--latency-5: 0;
+	}
+}
+
+#main-container {
+	width: 100%;
+	height: 100%;
+	max-width: 1920px;
+	max-height: 1080px;
+	overflow: hidden;
+
+	header {
+		height: 225px;
+		position: relative;
+		transition: all var(--duration-3) var(--latency-2), background 0s, color 0s;
+
+		#logo {
+			@include createLogo(0.9);
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translate(-50%, 50%);
+			transition: all var(--duration-3) var(--latency-2), background 0s;
+
+			> * {
+				transition: all var(--duration-3) ease-in-out,
+					-webkit-filter calc(var(--duration-3) + var(--duration-1)) ease-in-out;
+			}
+		}
+
+		#buttons {
+			position: absolute;
+			top: 0;
+			right: 4rem;
+			height: 100%;
+			max-height: 225px;
+			width: max-content;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: flex-end;
+			transform-origin: right top;
+			transition: all var(--duration-3) ease-in-out var(--latency-2),
+				background var(--duration-3) ease-in-out;
+		}
+	}
+	/* Tables --------------------------------- */
+	#tables {
+		height: calc((100vh - 225px));
+		max-height: 900px;
+		padding: 20px 64px 32px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		transition: all var(--duration-3) var(--latency-2), background 0s, color 0s;
+
+		#selection {
+			display: flex;
+			height: fit-content;
+			transition: margin var(--duration-3) linear var(--latency-2);
+
+			/* Pots ------------------------------------ */
+			#pots {
+				@include card();
+				flex: auto;
+				padding: 0 1.5rem;
+				overflow: hidden;
+				height: 180px;
+				max-height: 180px;
+				display: grid;
+				grid-template-rows: repeat(4, 180px);
+				transition: max-height var(--duration-3) linear var(--latency-2),
+					max-width var(--duration-3) linear var(--latency-2),
+					background var(--duration-1) ease-in-out;
+
+				.pot {
+					display: grid;
+					grid-template-columns: repeat(8, 1fr);
+					grid-template-rows: 1fr;
+					align-items: center;
+					justify-items: center;
+					justify-content: space-between;
+					height: 100%;
+					width: 100%;
+					transition: transform var(--duration-5) ease-in-out, background 0s,
+						color 0s;
+
+					.team {
+						@include center();
+						position: relative;
+						flex-direction: column;
+						padding: 20px 0;
+						border-radius: 5px;
+						width: 100%;
+						max-width: 244px;
+						cursor: pointer;
+						border: 1px solid transparent;
+						overflow: hidden;
+						text-transform: uppercase;
+						transition: all var(--duration-2) ease-in-out, background 0s,
+							color 0s;
+
+						.flag {
+							width: 92px;
+							height: 69px;
+							background-size: 92px 69px;
+							border-radius: 5px;
+							box-shadow: 0 0 1px var(--border-shadow);
+						}
+
+						.name {
+							width: 100%;
+							height: 1rem;
+							padding: 0 1px;
+							letter-spacing: 1.5px;
+							font-size: 13px;
+							font-weight: bold;
+							text-align: center;
+							margin-top: 10px;
+							transition: color var(--duration-1) ease-in-out;
+						}
+
+						&:not(.selected):hover {
+							transform: scale(0.98);
+							box-shadow: 0 0 1px 1px var(--border-shadow);
+						}
+
+						&.used {
+							opacity: 0.4;
+							cursor: unset;
+							transform: scale(0.98);
+
+							&:hover {
+								box-shadow: unset;
+							}
+						}
+
+						&.selected {
+							border-color: var(--border-shadow);
+							box-shadow: 0 0 1px 1px var(--border-shadow);
+							transform: scale(0.98);
+						}
+					}
+				}
+			}
+
+			/* Positions ----------------------------------- */
+			#positions {
+				@include card();
+				position: relative;
+				max-height: 180px;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-items: center;
+				align-items: center;
+
+				.position {
+					@include button();
+					box-shadow: none;
+					position: relative;
+					border-radius: 50%;
+					font-size: 13px;
+					font-weight: bold;
+					overflow: hidden;
+
+					.tag {
+						@include center();
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						border-radius: inherit;
+
+						&.new {
+							transform: scale(1);
+							transition: transform var(--duration-3) ease-in-out
+								var(--latency-1);
+						}
+
+						&.old {
+							transform: scale(0);
+							transition: transform var(--duration-3) ease-in-out;
+						}
+					}
+				}
+
+				&.auto {
+					padding: 0;
+					width: 0;
+					height: 180px;
+					transition: all var(--duration-3) linear;
+
+					.position {
+						width: 0;
+						transform: scale(0);
+						transition: all var(--duration-2) linear;
+					}
+				}
+
+				&.manual {
+					width: 180px;
+					height: 180px;
+					padding: 10px;
+					margin-left: calc(min(3vw, 57px));
+					transition: all var(--duration-3) linear,
+						background var(--duration-1) ease-in-out, color 0s;
+
+					.position {
+						height: 45px;
+						width: 45px;
+						transform: scale(1);
+						background-color: var(--posBtn-color);
+						color: var(--posBtn-text);
+
+						filter: drop-shadow(0px 2px 1px var(--posBtn-shadow))
+							drop-shadow(0px -2px 1px var(--posBtn-shadow));
+
+						transition: all var(--duration-2) linear var(--latency-1),
+							background var(--duration-1) ease-in-out,
+							color var(--duration-1) ease-in-out;
+
+						&::before {
+							content: "";
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							border-radius: 50%;
+							z-index: 2;
+						}
+
+						&.occupied,
+						&.pressed {
+							transform: scale(0.95);
+							cursor: default;
+							filter: drop-shadow(0 1px 0.5px var(--posBtn-shadow))
+								drop-shadow(0 -1px 0.5px var(--posBtn-shadow));
+
+							box-shadow: none;
+
+							background-color: var(--card-background);
+							color: var(--text-color);
+
+							transition: all var(--duration-2) ease-in-out var(--latency-1),
+								background var(--duration-1) ease-in-out,
+								color var(--duration-1) ease-in-out;
+
+							&::before {
+								opacity: 0.4;
+								background-color: inherit;
+							}
+
+							&:hover {
+								box-shadow: unset;
+							}
+						}
+
+						&:not(.occupied):hover {
+							transform: scale(0.97);
+							box-shadow: unset;
+							filter: drop-shadow(0px 1px 1px var(--posBtn-shadow))
+								drop-shadow(0px -1px 1px var(--posBtn-shadow));
+
+							transition: all var(--duration-2) ease-out;
+						}
+
+						&.pressed,
+						&.pressed:hover {
+							transform: scale(0.95);
+							box-shadow: none;
+							filter: drop-shadow(0 1px 0.5px var(--posBtn-shadow))
+								drop-shadow(0 -1px 0.5px var(--posBtn-shadow));
+
+							transition: all var(--duration-2) ease-in-out;
+						}
+					}
+				}
+
+				&.auto,
+				&.manual {
+					&.rerun {
+						transition: all var(--duration-3) linear var(--latency-2);
+
+						.position {
+							transition: all var(--duration-2) ease-in-out var(--latency-4);
+						}
+					}
+				}
+
+				&.auto,
+				&.manual {
+					&.reset {
+						.position {
+							transition: all var(--duration-2) ease-in-out;
+						}
+					}
+				}
+			}
+		}
+		/* Groups ---------------------------------------*/
+		#groups {
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			align-items: center;
+			justify-items: center;
+			grid-gap: calc(min(3vw, 57px));
+			transition: all var(--duration-3) linear, background 0s, color 0s;
+
+			.group {
+				@include card();
+				@include center();
+				flex-direction: column;
+				width: 100%;
+				height: fit-content;
+				position: relative;
+				padding: 65px 10px 0;
+				border: 7px solid transparent;
+				transition: all var(--duration-3) linear,
+					background var(--duration-1) ease-in-out, color 0s;
+
+				.title {
+					@include center();
+					position: absolute;
+					top: -6px;
+					left: -6px;
+					width: calc(100% + 12px);
+					height: 47px;
+					background: var(--highlight-color);
+					color: #f4f4f4;
+					font-size: 17px;
+					letter-spacing: 1.4px;
+					font-weight: bold;
+					border: 7px solid transparent;
+					border-radius: 10px 10px 0 0;
+
+					transition: all var(--duration-3) ease-in-out,
+						background var(--duration-3) ease-in-out,
+						color var(--duration-1) ease-in-out;
+
+					box-shadow: var(--highlight-color) 1px 0 0 1px,
+						var(--highlight-color) -1px 0px 0px 1px;
+				}
+
+				.team {
+					@include center();
+					flex-direction: column;
+					width: 3.6rem;
+					height: fit-content;
+					margin: 0 0 12px;
+					transition: background 0s, color 0s;
+					overflow: hidden;
+
+					.flag {
+						width: inherit;
+						height: 2.7rem;
+						border-radius: 5px;
+						box-shadow: 0 0 1px var(--border-shadow);
+
+						&-section {
+							background-color: var(--main-background);
+							background-size: 3.6rem 2.7rem;
+						}
+					}
+
+					.name {
+						width: inherit;
+						height: 20px;
+						font-weight: bold;
+						text-transform: uppercase;
+						letter-spacing: 1.5px;
+						margin-top: 3px;
+						transition: color var(--duration-1) ease-in-out;
+
+						&-section {
+							@include center();
+							padding: 0 0 0 1px;
+							font-size: 12px;
+						}
+					}
+
+					.flag,
+					.name {
+						position: relative;
+						overflow: hidden;
+
+						&-section {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							border-radius: inherit;
+
+							&:nth-of-type(2) {
+								left: calc(100% + 1rem);
+							}
+
+							&:nth-of-type(3) {
+								left: calc(200% + 2rem);
+							}
+						}
+					}
+
+					&.occupied {
+						.flag-section,
+						.name-section {
+							transform: translateX(calc(-100% - 1rem));
+						}
+					}
+
+					&.playoff.revealed {
+						.flag-section,
+						.name-section {
+							transform: translateX(calc(-200% - 2rem));
+						}
+					}
+
+					.flag-section,
+					.name-section {
+						transition: transform var(--duration-4) ease var(--latency-1),
+							background var(--duration-1) ease-in-out;
+					}
+				}
+
+				&.current {
+					border-color: var(--highlight-color);
+					box-shadow: none;
+
+					.title {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+
+	/* Selection is done ------------------------------------------- */
+	&.done {
+		header {
+			height: 350px;
+			transition: all var(--duration-3) ease-in-out var(--latency-4),
+				background 0s;
+
+			#logo {
+				@include createLogo(1);
+				left: 50%;
+				transform: translate(-50%, 95%);
+				transition: all var(--duration-3) ease-in-out var(--latency-5),
+					background 0s;
+
+				> * {
+					transition: all var(--duration-3) ease-in-out var(--latency-4),
+						-webkit-filter calc(var(--duration-3) + var(--duration-1)) ease-in-out;
+				}
+			}
+		}
+
+		#tables {
+			height: calc(100vh - 350px);
+			max-height: 800px;
+			transition: all var(--duration-3) ease-in-out var(--latency-3),
+				background 0s, color 0s;
+
+			#selection {
+				margin: 0;
+				transition: margin var(--duration-3) linear var(--latency-3);
+
+				#pots {
+					max-height: 0;
+					margin: 0;
+					transition: all var(--duration-3) linear var(--latency-3);
+				}
+
+				#positions {
+					max-height: 0;
+					transition: all var(--duration-3) linear var(--latency-3);
+
+					&.manual {
+						padding: 0;
+						margin-bottom: 0;
+						transition: all var(--duration-3) linear var(--latency-3);
+
+						.position {
+							transform: scale(0);
+							transition: all var(--duration-2) linear var(--latency-2);
+						}
+					}
+				}
+			}
+
+			#groups {
+				padding-bottom: calc(min(110px, 10vh));
+				transition: all var(--duration-3) ease-in-out var(--latency-3),
+					background 0s, color 0s;
+
+				.group {
+					transition: all var(--duration-2) ease-in-out var(--latency-3),
+						background var(--duration-1) ease-in-out, color 0s;
+
+					.team {
+						transition: all var(--duration-2) ease-in-out var(--latency-3),
+							background var(--duration-1) ease-in-out, color 0s;
+					}
+				}
+			}
+		}
+	}
+}
