@@ -591,9 +591,8 @@
     letter-spacing: 1px;
     background-color: var(--card-background);
   }
-  #main-container #tables #selection #pots .pot .team.selected {
-    -webkit-box-shadow: 0 0 2px 2px var(--border-shadow);
-            box-shadow: 0 0 2px 2px var(--border-shadow);
+  #main-container #tables #selection #pots .pot .team.selected .name {
+    background-color: var(--main-background);
   }
   #main-container #tables #groups {
     -ms-grid-columns: (1fr)[4];
@@ -914,7 +913,7 @@
   }
   #main-container #tables #groups .group .team .name-section {
     font-size: 10px;
-    word-spacing: -3px;
+    word-spacing: -4px;
   }
   #main-container.done header {
     height: 350px;

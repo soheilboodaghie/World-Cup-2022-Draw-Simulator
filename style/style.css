@@ -357,6 +357,11 @@ body.preload {
           transform: scale(0.98);
 }
 
+#main-container #tables #selection #pots .pot .team.selected .name {
+  -webkit-transition: background var(--duration-1) ease-in-out;
+  transition: background var(--duration-1) ease-in-out;
+}
+
 #main-container #tables #selection #positions {
   border-radius: 15px;
   background-color: var(--card-background);

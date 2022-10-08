@@ -244,6 +244,10 @@ body {
 							border-color: var(--border-shadow);
 							box-shadow: 0 0 1px 1px var(--border-shadow);
 							transform: scale(0.98);
+
+							.name {
+								transition: background var(--duration-1) ease-in-out;
+							}
 						}
 					}
 				}

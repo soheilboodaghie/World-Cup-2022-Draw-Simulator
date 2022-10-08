@@ -466,7 +466,9 @@
 							}
 
 							&.selected {
-								box-shadow: 0 0 2px 2px var(--border-shadow);
+								.name {
+									background-color: var(--main-background);
+								}
 							}
 						}
 					}
@@ -729,7 +731,7 @@
 						.name {
 							&-section {
 								font-size: 10px;
-								word-spacing: -3px;
+								word-spacing: -4px;
 							}
 						}
 					}
