@@ -2684,16 +2684,15 @@
     height: 24px;
   }
   #main-container #tables #selection #positions {
-    max-width: 80px;
     max-height: 80px;
   }
   #main-container #tables #selection #positions.manual {
-    width: 80px;
     height: 80px;
+    padding: 1px 3px;
   }
   #main-container #tables #selection #positions.manual .position {
-    width: 22px;
-    height: 22px;
+    width: 27px;
+    height: 27px;
   }
   #main-container #tables #groups .group {
     padding: 15px 5px 2px;
@@ -2848,16 +2847,16 @@
     padding: 4px 0;
   }
   #main-container #tables #selection #pots .pot .team {
-    height: 21px;
+    height: 24px;
   }
   #main-container #tables #selection #pots .pot .team .flag {
-    width: 24px;
-    height: 18px;
-    background-size: 24px 18px;
+    width: 28px;
+    height: 21px;
+    background-size: 28px 21px;
   }
   #main-container #tables #selection #pots .pot .team .name {
-    width: calc(100% - 24px - 4.5px);
-    height: 18px;
+    width: calc(100% - 28px - 4.5px);
+    height: 21px;
   }
   #main-container #tables #selection #pots .pot .team .name {
     font-size: 9px;
@@ -3071,6 +3070,26 @@
   }
 }
 
+@media screen and (max-width: 400px) and (max-height: 700px) {
+  #main-container #tables #groups .group {
+    padding-top: 3px;
+    padding-left: 15px;
+    border-width: 4px;
+  }
+  #main-container #tables #groups .group .title {
+    top: -3px;
+    left: -3px;
+    height: calc(100% + 6px);
+    width: 12px;
+    font-size: 10px;
+    border-width: 4px;
+    border-radius: 7px 0 0 7px;
+  }
+  #main-container #tables #groups .group .title .hideable {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 400px) {
   #main-container.done #tables #groups {
     padding-bottom: 0;
@@ -3091,10 +3110,13 @@
     font-size: 8px;
   }
   #main-container #tables #groups .group {
-    padding: 16px 1px 3px;
+    padding: 1px 1px 1px 8px;
   }
   #main-container #tables #groups .group .title {
-    height: 14px;
+    width: 8px;
+  }
+  #main-container #tables #groups .group .team {
+    margin: 0 0.5px;
   }
   #main-container #tables #groups .group .team .name-section {
     font-size: 7px;

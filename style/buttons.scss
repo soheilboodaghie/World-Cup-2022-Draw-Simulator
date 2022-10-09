@@ -38,8 +38,8 @@
 		height: 24px;
 		width: 24px;
 		border-radius: 50%;
-		left: 5px;
-		transform: rotate(-140deg);
+		left: 4px;
+		transform: translateX(0);
 		transition: all var(--duration-3) ease-in-out;
 
 		&::before,
@@ -57,13 +57,14 @@
 		img {
 			height: 100%;
 			width: 100%;
+			transform: rotate(-140deg);
+			transition: transform var(--duration-3) ease-in-out;
 		}
 	}
 
 	&.dark {
 		.slider {
-			left: calc(100% - 3px);
-			transform: translateX(-100%) rotate(0);
+			transform: translateX(40px);
 
 			&::before,
 			&::after {
@@ -75,7 +76,7 @@
 				width: 4px;
 				border-radius: 50%;
 				background-color: #eee;
-				transition: all var(--duration-2) ease var(--latency-3);
+				transition: all var(--duration-4) ease var(--latency-2);
 				animation: shining 3s ease alternate 1.5s forwards;
 			}
 
@@ -85,6 +86,10 @@
 				height: 2px;
 				width: 3px;
 				animation: shining 3s ease alternate forwards;
+			}
+
+			img {
+				transform: rotate(0);
 			}
 		}
 
