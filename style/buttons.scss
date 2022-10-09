@@ -33,7 +33,8 @@
 		width: 21px;
 	}
 
-	.slider {
+	.slider,
+	.stars {
 		position: absolute;
 		height: 24px;
 		width: 24px;
@@ -41,20 +42,9 @@
 		left: 4px;
 		transform: translateX(0);
 		transition: all var(--duration-3) ease-in-out;
+	}
 
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: 3px;
-			left: 3px;
-			height: 0;
-			width: 0;
-			border-radius: 50%;
-			transform: scale(0);
-			transition: all var(--duration-1) ease;
-		}
-
+	.slider {
 		img {
 			height: 100%;
 			width: 100%;
@@ -63,52 +53,69 @@
 		}
 	}
 
+	.stars {
+		transform: translateX(40px);
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 18px;
+			width: 4px;
+			height: 3px;
+			background-color: transparent;
+			border-radius: 50%;
+			transition: all var(--duration-3) ease;
+		}
+
+		&::after {
+			top: 10px;
+			left: 22px;
+			width: 3px;
+			height: 2px;
+		}
+	}
+
 	&.dark {
 		.slider {
 			transform: translateX(40px);
-
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				top: 3px;
-				left: -22px;
-				height: 3px;
-				width: 4px;
-				border-radius: 50%;
-				background-color: #eee;
-				transform: scale(1);
-				transition: all var(--duration-4) ease var(--latency-2);
-				animation: shining 3s ease alternate 1.5s forwards;
-			}
-
-			&::after {
-				top: 10px;
-				left: -18px;
-				height: 2px;
-				width: 3px;
-				animation: shining 3s ease alternate forwards;
-			}
 
 			img {
 				transform: rotate(0);
 			}
 		}
 
-		@keyframes shining {
-			0% {
-				transform: scale(1);
-				opacity: 1;
+		.stars {
+			transform: translateX(0);
+			transition: transform var(--duration-3) ease var(--latency-1);
+
+			&::before,
+			&::after {
+				background-color: var(--text-color);
+				transition: background var(--duration-3) ease-in-out;
+				animation: shining 3s ease alternate 1.5s forwards;
 			}
 
-			50% {
-				transform: scale(0.6);
-				opacity: 0.8;
+			&::after {
+				animation: shining 3s ease alternate forwards;
 			}
 
-			100% {
-				transform: scale(1);
-				opacity: 1;
+			@keyframes shining {
+				0% {
+					transform: scale(1);
+					opacity: 1;
+				}
+
+				50% {
+					transform: scale(0.6);
+					opacity: 0.8;
+				}
+
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
 			}
 		}
 	}
