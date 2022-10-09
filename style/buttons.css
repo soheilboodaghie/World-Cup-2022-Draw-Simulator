@@ -106,6 +106,8 @@
   height: 0;
   width: 0;
   border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-transition: all var(--duration-1) ease;
   transition: all var(--duration-1) ease;
 }
@@ -135,6 +137,8 @@
   width: 4px;
   border-radius: 50%;
   background-color: #eee;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-transition: all var(--duration-4) ease var(--latency-2);
   transition: all var(--duration-4) ease var(--latency-2);
   -webkit-animation: shining 3s ease alternate 1.5s forwards;
