@@ -110,7 +110,7 @@ let displayGroups = () => {
 			if (teamId !== 32) {
 				team.classList.add("occupied");
 
-				occupiedFlag.style.backgroundImage = `url("/assets/flags/${allTeams[teamId].flag}.png")`;
+				occupiedFlag.style.backgroundImage = `url("./assets/flags/${allTeams[teamId].flag}.png")`;
 				occupiedName.innerText = allTeams[teamId].abrv;
 			}
 
@@ -122,7 +122,7 @@ let displayGroups = () => {
 				// creates flag playoff section
 				let playOffFlag = document.createElement("div");
 				playOffFlag.classList.add("flag-section");
-				playOffFlag.style.backgroundImage = `url("/assets/flags/${
+				playOffFlag.style.backgroundImage = `url("./assets/flags/${
 					playOffTeams[teamId - 29].flag
 				}.png")`;
 
@@ -178,7 +178,7 @@ let alterGroupsView = (groupNum, placeNum) => {
 					let occupiedName = pageTeam.querySelectorAll(".name-section")[1];
 
 					// changes background and text
-					occupiedFlag.style.backgroundImage = `url("/assets/flags/${allTeams[teamId].flag}.png")`;
+					occupiedFlag.style.backgroundImage = `url("./assets/flags/${allTeams[teamId].flag}.png")`;
 					occupiedName.innerText = allTeams[teamId].abrv;
 					// ------------------------------
 					/*
@@ -211,7 +211,7 @@ let alterGroupsView = (groupNum, placeNum) => {
 
 						let playOffFlag = document.createElement("div");
 						playOffFlag.classList.add("flag-section");
-						playOffFlag.style.backgroundImage = `url("/assets/flags/${
+						playOffFlag.style.backgroundImage = `url("./assets/flags/${
 							playOffTeams[teamId - 29].flag
 						}.png")`;
 
@@ -249,7 +249,7 @@ let displayPots = () => {
 			// flags and names
 			team.innerHTML = `
 			<div class="flag" style="background-image: url(${
-				"/assets/flags/" + allTeams[teamId].flag + ".png"
+				"./assets/flags/" + allTeams[teamId].flag + ".png"
 			})"></div>
 			<p class="name">${allTeams[teamId].name}</p>
 			<input type="hidden" name="id" value="${allTeams[teamId].id}">

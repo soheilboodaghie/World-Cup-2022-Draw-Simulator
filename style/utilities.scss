@@ -60,7 +60,7 @@
 	width: fit-content;
 
 	.cup {
-		background: url("/assets/logo_cup.png");
+		background-image: url("../assets/logo_cup.png");
 		width: $num * 81px;
 		height: $num * 169px;
 		background-size: $num * 81px $num * 169px;
@@ -68,7 +68,7 @@
 	}
 
 	.title {
-		background-image: url("/assets/logo_name.png");
+		background-image: url("../assets/logo_name.png");
 		width: $num * 267px;
 		height: $num * 70px;
 		background-size: $num * 267px $num * 70px;

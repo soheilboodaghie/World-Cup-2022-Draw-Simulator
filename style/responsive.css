@@ -98,14 +98,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 64.8px;
     height: 135.2px;
     background-size: 64.8px 135.2px;
     margin-right: 0.8rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 213.6px;
     height: 56px;
     background-size: 213.6px 56px;
@@ -154,14 +154,14 @@
             transform: translate(-50%, 85%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 76.95px;
     height: 160.55px;
     background-size: 76.95px 160.55px;
     margin-right: 0.95rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 253.65px;
     height: 66.5px;
     background-size: 253.65px 66.5px;
@@ -188,14 +188,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 60.75px;
     height: 126.75px;
     background-size: 60.75px 126.75px;
     margin-right: 0.75rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 200.25px;
     height: 52.5px;
     background-size: 200.25px 52.5px;
@@ -261,14 +261,14 @@
     width: fit-content;
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 72.9px;
     height: 152.1px;
     background-size: 72.9px 152.1px;
     margin-right: 0.9rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 240.3px;
     height: 63px;
     background-size: 240.3px 63px;
@@ -295,14 +295,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 48.6px;
     height: 101.4px;
     background-size: 48.6px 101.4px;
     margin-right: 0.6rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 160.2px;
     height: 42px;
     background-size: 160.2px 42px;
@@ -417,14 +417,14 @@
             transform: translate(-50%, 95%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 68.85px;
     height: 143.65px;
     background-size: 68.85px 143.65px;
     margin-right: 0.85rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 226.95px;
     height: 59.5px;
     background-size: 226.95px 59.5px;
@@ -493,14 +493,14 @@
             transform: translate(0, 50%);
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 36.45px;
     height: 76.05px;
     background-size: 36.45px 76.05px;
     margin-right: 0.45rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 120.15px;
     height: 31.5px;
     background-size: 120.15px 31.5px;
@@ -785,14 +785,14 @@
             transform: translate(-50%, 50%);
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 36.45px;
     height: 76.05px;
     background-size: 36.45px 76.05px;
     margin-right: 0.45rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 120.15px;
     height: 31.5px;
     background-size: 120.15px 31.5px;
@@ -935,14 +935,14 @@
             transform: translate(-50%, 135%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 56.7px;
     height: 118.3px;
     background-size: 56.7px 118.3px;
     margin-right: 0.7rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 186.9px;
     height: 49px;
     background-size: 186.9px 49px;
@@ -969,14 +969,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 32.4px;
     height: 67.6px;
     background-size: 32.4px 67.6px;
     margin-right: 0.4rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 106.8px;
     height: 28px;
     background-size: 106.8px 28px;
@@ -1205,14 +1205,14 @@
             transform: translate(-50%, 140%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 52.65px;
     height: 109.85px;
     background-size: 52.65px 109.85px;
     margin-right: 0.65rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 173.55px;
     height: 45.5px;
     background-size: 173.55px 45.5px;
@@ -1238,14 +1238,14 @@
             transform: translate(-50%, 150%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 48.6px;
     height: 101.4px;
     background-size: 48.6px 101.4px;
     margin-right: 0.6rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 160.2px;
     height: 42px;
     background-size: 160.2px 42px;
@@ -1278,14 +1278,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 32.4px;
     height: 67.6px;
     background-size: 32.4px 67.6px;
     margin-right: 0.4rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 106.8px;
     height: 28px;
     background-size: 106.8px 28px;
@@ -1333,14 +1333,14 @@
             transform: translate(-50%, 75%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 72.9px;
     height: 152.1px;
     background-size: 72.9px 152.1px;
     margin-right: 0.9rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 240.3px;
     height: 63px;
     background-size: 240.3px 63px;
@@ -1366,14 +1366,14 @@
             transform: translate(-50%, 80%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 68.85px;
     height: 143.65px;
     background-size: 68.85px 143.65px;
     margin-right: 0.85rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 226.95px;
     height: 59.5px;
     background-size: 226.95px 59.5px;
@@ -1399,14 +1399,14 @@
             transform: translate(-50%, 85%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 64.8px;
     height: 135.2px;
     background-size: 64.8px 135.2px;
     margin-right: 0.8rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 213.6px;
     height: 56px;
     background-size: 213.6px 56px;
@@ -1432,14 +1432,14 @@
             transform: translate(-50%, 95%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 56.7px;
     height: 118.3px;
     background-size: 56.7px 118.3px;
     margin-right: 0.7rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 186.9px;
     height: 49px;
     background-size: 186.9px 49px;
@@ -1484,14 +1484,14 @@
             transform: translate(-50%, 70%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 64.8px;
     height: 135.2px;
     background-size: 64.8px 135.2px;
     margin-right: 0.8rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 213.6px;
     height: 56px;
     background-size: 213.6px 56px;
@@ -1517,14 +1517,14 @@
             transform: translate(-50%, 80%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 60.75px;
     height: 126.75px;
     background-size: 60.75px 126.75px;
     margin-right: 0.75rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 200.25px;
     height: 52.5px;
     background-size: 200.25px 52.5px;
@@ -1550,14 +1550,14 @@
             transform: translate(-50%, 85%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 56.7px;
     height: 118.3px;
     background-size: 56.7px 118.3px;
     margin-right: 0.7rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 186.9px;
     height: 49px;
     background-size: 186.9px 49px;
@@ -1596,14 +1596,14 @@
             transform: translate(0, 50%);
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 24.3px;
     height: 50.7px;
     background-size: 24.3px 50.7px;
     margin-right: 0.3rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 80.1px;
     height: 21px;
     background-size: 80.1px 21px;
@@ -1638,14 +1638,14 @@
             transform: translate(-50%, 70%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 60.75px;
     height: 126.75px;
     background-size: 60.75px 126.75px;
     margin-right: 0.75rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 200.25px;
     height: 52.5px;
     background-size: 200.25px 52.5px;
@@ -1671,14 +1671,14 @@
             transform: translate(-50%, 75%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 56.7px;
     height: 118.3px;
     background-size: 56.7px 118.3px;
     margin-right: 0.7rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 186.9px;
     height: 49px;
     background-size: 186.9px 49px;
@@ -1704,14 +1704,14 @@
             transform: translate(-50%, 80%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 52.65px;
     height: 109.85px;
     background-size: 52.65px 109.85px;
     margin-right: 0.65rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 173.55px;
     height: 45.5px;
     background-size: 173.55px 45.5px;
@@ -1749,14 +1749,14 @@
             transform: translate(-50%, 65%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 56.7px;
     height: 118.3px;
     background-size: 56.7px 118.3px;
     margin-right: 0.7rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 186.9px;
     height: 49px;
     background-size: 186.9px 49px;
@@ -1789,14 +1789,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 20.25px;
     height: 42.25px;
     background-size: 20.25px 42.25px;
     margin-right: 0.25rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 66.75px;
     height: 17.5px;
     background-size: 66.75px 17.5px;
@@ -2268,14 +2268,14 @@
             transform: translate(-50%, 70%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 48.6px;
     height: 101.4px;
     background-size: 48.6px 101.4px;
     margin-right: 0.6rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 160.2px;
     height: 42px;
     background-size: 160.2px 42px;
@@ -2348,14 +2348,14 @@
             transform: translate(-50%, 55%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 40.5px;
     height: 84.5px;
     background-size: 40.5px 84.5px;
     margin-right: 0.5rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 133.5px;
     height: 35px;
     background-size: 133.5px 35px;
@@ -2643,14 +2643,14 @@
             transform: translate(-50%, 75%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 44.55px;
     height: 92.95px;
     background-size: 44.55px 92.95px;
     margin-right: 0.55rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 146.85px;
     height: 38.5px;
     background-size: 146.85px 38.5px;
@@ -2724,14 +2724,14 @@
             transform: translate(-50%, 65%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 40.5px;
     height: 84.5px;
     background-size: 40.5px 84.5px;
     margin-right: 0.5rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 133.5px;
     height: 35px;
     background-size: 133.5px 35px;
@@ -2803,14 +2803,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 16.2px;
     height: 33.8px;
     background-size: 16.2px 33.8px;
     margin-right: 0.2rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 53.4px;
     height: 14px;
     background-size: 53.4px 14px;
@@ -2925,14 +2925,14 @@
     width: fit-content;
   }
   #main-container header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 28.35px;
     height: 59.15px;
     background-size: 28.35px 59.15px;
     margin-right: 0.35rem;
   }
   #main-container header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 93.45px;
     height: 24.5px;
     background-size: 93.45px 24.5px;
@@ -2985,14 +2985,14 @@
             transform: translate(-50%, 120%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 48.6px;
     height: 101.4px;
     background-size: 48.6px 101.4px;
     margin-right: 0.6rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 160.2px;
     height: 42px;
     background-size: 160.2px 42px;
@@ -3116,14 +3116,14 @@
             transform: translate(-50%, 140%);
   }
   #main-container.done header #logo .cup {
-    background: url("/assets/logo_cup.png");
+    background-image: url("../assets/logo_cup.png");
     width: 40.5px;
     height: 84.5px;
     background-size: 40.5px 84.5px;
     margin-right: 0.5rem;
   }
   #main-container.done header #logo .title {
-    background-image: url("/assets/logo_name.png");
+    background-image: url("../assets/logo_name.png");
     width: 133.5px;
     height: 35px;
     background-size: 133.5px 35px;

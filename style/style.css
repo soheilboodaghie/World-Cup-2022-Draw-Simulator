@@ -159,7 +159,7 @@ body.preload {
 }
 
 #main-container header #logo .cup {
-  background: url("/assets/logo_cup.png");
+  background-image: url("../assets/logo_cup.png");
   width: 72.9px;
   height: 152.1px;
   background-size: 72.9px 152.1px;
@@ -167,7 +167,7 @@ body.preload {
 }
 
 #main-container header #logo .title {
-  background-image: url("/assets/logo_name.png");
+  background-image: url("../assets/logo_name.png");
   width: 240.3px;
   height: 63px;
   background-size: 240.3px 63px;
@@ -795,7 +795,7 @@ body.preload {
 }
 
 #main-container.done header #logo .cup {
-  background: url("/assets/logo_cup.png");
+  background-image: url("../assets/logo_cup.png");
   width: 81px;
   height: 169px;
   background-size: 81px 169px;
@@ -803,7 +803,7 @@ body.preload {
 }
 
 #main-container.done header #logo .title {
-  background-image: url("/assets/logo_name.png");
+  background-image: url("../assets/logo_name.png");
   width: 267px;
   height: 70px;
   background-size: 267px 70px;
