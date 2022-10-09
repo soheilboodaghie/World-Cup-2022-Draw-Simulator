@@ -66,7 +66,7 @@
 			height: 3px;
 			background-color: transparent;
 			border-radius: 50%;
-			transition: all var(--duration-3) ease;
+			transition: background var(--duration-3) ease;
 		}
 
 		&::after {

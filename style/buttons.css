@@ -124,8 +124,8 @@
   height: 3px;
   background-color: transparent;
   border-radius: 50%;
-  -webkit-transition: all var(--duration-3) ease;
-  transition: all var(--duration-3) ease;
+  -webkit-transition: background var(--duration-3) ease;
+  transition: background var(--duration-3) ease;
 }
 
 #theme-btn .stars::after {
