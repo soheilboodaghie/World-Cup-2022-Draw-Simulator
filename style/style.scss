@@ -30,7 +30,7 @@
 body {
 	display: flex;
 	justify-content: center;
-	height: 100vh;
+	height: calc(100vh - calc(100vh - 100%));
 
 	--duration-1: 0.2s;
 	--duration-2: 0.3s;
